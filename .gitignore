@@ -2,9 +2,6 @@
 /bin/
 /build/
 
-# Ignore uploads
-/uploads/
-
 # Ignore IDE-specific files
 .idea/
 *.log
