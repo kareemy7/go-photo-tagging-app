@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Upload Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .results-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .photo {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .photo img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .tags {
+            margin: 20px 0;
+        }
+        .tags h3 {
+            margin-bottom: 10px;
+        }
+        .tags span {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .search-results img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .search-results h3 {
+            margin-bottom: 10px;
+        }
+        .empty-message {
+            text-align: center;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="results-container">
+        <h2>Photo Upload Results</h2>
+        <div class="photo">
+            <img id="uploadedPhoto" src="{{.url}}" alt="Uploaded Photo">
+        </div>
+        <div class="tags">
+            <h3>Tags:</h3>
+            {{range .tags}}
+            <span>{{.}}</span>
+            {{else}}
+            <p class="empty-message">No tags found.</p>
+            {{end}}
+        </div>
+        
+    </div>
+</body>
+</html>

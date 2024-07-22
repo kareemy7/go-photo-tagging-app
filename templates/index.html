@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Upload</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .upload-box {
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .upload-box h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .upload-box input[type="file"] {
+            display: block;
+            width: 80%;
+            margin: 20px auto;
+            padding: 10px;
+            border: 2px dashed #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .upload-box button {
+            width: 60%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .upload-box button:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-box">
+        <h2>Upload a Photo</h2>
+        <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit">Upload</button>
+        </form>
+        {{ if .error }}
+        <div class="error">{{ .error }}</div>
+        {{ end }}
+    </div>
+</body>
+</html>
