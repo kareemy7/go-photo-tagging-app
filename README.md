@@ -19,7 +19,7 @@ This is a Go web application that allows users to upload photos and automaticall
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/go-photo-tagging-app.git
+    git clone https://github.com/kareemy7/go-photo-tagging-app.git
     cd go-photo-tagging-app
     ```
 
